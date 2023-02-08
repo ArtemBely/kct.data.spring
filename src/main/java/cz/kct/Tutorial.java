@@ -1,12 +1,12 @@
-package cz.kct.tutorial;
+package cz.kct;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Logback {
+public class Tutorial {
     public static void main(String[] args) {
-        SpringApplication.run(Logback.class, args);
+        SpringApplication.run(Tutorial.class, args);
     }
 }
 

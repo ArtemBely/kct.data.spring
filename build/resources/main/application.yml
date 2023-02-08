@@ -5,3 +5,7 @@ spring:
   h2:
     console:
       enabled: 'true'
+  #datasource:
+  # url: jdbc:postgresql://localhost:5432/artembelysev
+  # username: postgres
+  # password': postgres
