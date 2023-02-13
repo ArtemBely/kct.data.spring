@@ -5,12 +5,13 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
+      default_schema: DEFAULT
     database: postgresql
   h2:
     console:
       enabled: 'true'
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/artembelysev
+    url: jdbc:postgresql://localhost:5432/jasonbourn
     username: postgres
     password': postgres
