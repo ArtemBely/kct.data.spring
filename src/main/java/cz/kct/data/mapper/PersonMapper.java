@@ -15,4 +15,7 @@ public class PersonMapper {
     public PersonEntity mapToEntity(PersonDto dto){
         return modelMapper.map(dto, PersonEntity.class).toBuilder().build();
     }
+    public PersonDto mapToDto(PersonEntity entity){
+        return modelMapper.map(entity, PersonDto.class).toBuilder().build();
+    }
 }
