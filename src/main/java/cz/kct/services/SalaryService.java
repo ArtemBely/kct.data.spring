@@ -29,8 +29,16 @@ public class SalaryService {
         return salaryDto;
     }
 
-    public String joinSalaryWithEmployees() {
+    public Optional<SalaryEntity> joinSalaryWithEmployees() {
+        log.info("DATA IS = {}", salaryRepository.getJoinInformation());
         return salaryRepository.getJoinInformation();
+    }
+
+    public SalaryDto findOneSalary(Double quantity, int id) {
+        log.info("Find certain salary");
+        List<SalaryEntity> salaryEntities = salaryRepository.findByQty(quantity, id);
+        SalaryDto salaryDto = salaryMapper.mapToDto(salaryEntities.get(0));
+        return salaryDto;
     }
 
 }
