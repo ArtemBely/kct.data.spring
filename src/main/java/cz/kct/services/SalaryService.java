@@ -29,7 +29,7 @@ public class SalaryService {
         return salaryDto;
     }
 
-    public Optional<SalaryEntity> joinSalaryWithEmployees() {
+    public List<PersonEntity> joinSalaryWithEmployees() {
         log.info("DATA IS = {}", salaryRepository.getJoinInformation());
         return salaryRepository.getJoinInformation();
     }

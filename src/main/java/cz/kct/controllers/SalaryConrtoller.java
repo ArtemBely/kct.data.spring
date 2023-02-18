@@ -2,6 +2,7 @@ package cz.kct.controllers;
 
 import cz.kct.data.dto.PersonDto;
 import cz.kct.data.dto.SalaryDto;
+import cz.kct.data.entity.PersonEntity;
 import cz.kct.data.entity.SalaryEntity;
 import cz.kct.repository.PersonRepository;
 import cz.kct.repository.SalaryRepository;
@@ -34,7 +35,7 @@ public class SalaryConrtoller {
     }
 
     @GetMapping("/v1/join")
-    public Optional<SalaryEntity> joinSalaryAndPerson() {
+    public List<PersonEntity> joinSalaryAndPerson() {
        return salaryService.joinSalaryWithEmployees();
     }
 
