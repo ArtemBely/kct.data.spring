@@ -24,7 +24,7 @@ public class PersonDto {
 
     //@JsonProperty("name") //attributes received from JSON
     @Valid
-    @Size(max=20)
+    @Size(min=2, message="First name should contain more than 2 character")
     private String firstName;
     @Size(max=20)
     private String lastName;

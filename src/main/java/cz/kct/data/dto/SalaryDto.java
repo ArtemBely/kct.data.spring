@@ -24,7 +24,7 @@ public class SalaryDto {
 
     @Valid
     @PositiveOrZero
-    @Max(999999)
+    @Max(value = 999999, message = "Field shouldn't contain number more than 999999")
     private String quantity;
 
     @NonNull

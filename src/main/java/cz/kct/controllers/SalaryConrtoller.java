@@ -7,6 +7,7 @@ import cz.kct.data.entity.SalaryEntity;
 import cz.kct.repository.PersonRepository;
 import cz.kct.repository.SalaryRepository;
 import cz.kct.services.SalaryService;
+import feign.Param;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +26,10 @@ public class SalaryConrtoller {
 
     @GetMapping("/v1/connect")
     public void connect(){
-        log.info("This is an INFO level log message!");
+        log.info("Test cron: \n");
+        salaryService.invokeCron();
     }
+
     @ResponseBody
     @GetMapping("/v1/getOne")
     public SalaryDto findRelatedSalary(@RequestParam int id) {
@@ -37,6 +40,11 @@ public class SalaryConrtoller {
     @GetMapping("/v1/join")
     public List<PersonEntity> joinSalaryAndPerson() {
        return salaryService.joinSalaryWithEmployees();
+    }
+
+    @GetMapping("/v1/older")
+    public List<PersonEntity> joinSalaryAndPersonOlderThanThirty(@RequestParam int age) {
+        return salaryService.joinSalaryWithEmployeesOlderThanThirty(age);
     }
 
     @GetMapping("/v1/get/byname")
