@@ -1,19 +1,15 @@
 package cz.kct.controllers;
 
-import cz.kct.data.dto.PersonDto;
 import cz.kct.data.dto.SalaryDto;
 import cz.kct.data.entity.PersonEntity;
-import cz.kct.data.entity.SalaryEntity;
-import cz.kct.repository.PersonRepository;
-import cz.kct.repository.SalaryRepository;
 import cz.kct.services.SalaryService;
-import feign.Param;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
-import java.util.Optional;
 
 @Slf4j
 @RestController
@@ -25,9 +21,10 @@ public class SalaryConrtoller {
     private final SalaryService salaryService;
 
     @GetMapping("/v1/connect")
+    @Scheduled(cron = "*/10 * * * * *")
     public void connect(){
-        log.info("Test cron: \n");
-        salaryService.invokeCron();
+        LocalDateTime dt = LocalDateTime.now();
+        System.out.println(dt);
     }
 
     @ResponseBody

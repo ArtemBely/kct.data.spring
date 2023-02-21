@@ -1,20 +1,14 @@
 package cz.kct.services;
 
-import cz.kct.data.dto.PersonDto;
 import cz.kct.data.dto.SalaryDto;
 import cz.kct.data.entity.PersonEntity;
 import cz.kct.data.entity.SalaryEntity;
-import cz.kct.data.mapper.PersonMapper;
 import cz.kct.data.mapper.SalaryMapper;
-import cz.kct.repository.PersonRepository;
 import cz.kct.repository.SalaryRepository;
-import feign.Param;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.modelmapper.ModelMapper;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -23,6 +17,7 @@ import java.util.Optional;
 @Service
 @Slf4j
 @AllArgsConstructor
+
 public class SalaryService {
 
     private SalaryRepository salaryRepository;
@@ -49,9 +44,5 @@ public class SalaryService {
         SalaryDto salaryDto = salaryMapper.mapToDto(salaryEntities.get(0));
         return salaryDto;
     }
-    @Scheduled(cron = "*/5 * * * * *")
-    public void invokeCron() {
-        LocalDateTime dt = LocalDateTime.now();
-        System.out.println(dt);
-    }
+
 }
