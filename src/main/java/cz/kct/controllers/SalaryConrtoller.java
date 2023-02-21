@@ -21,7 +21,7 @@ public class SalaryConrtoller {
     private final SalaryService salaryService;
 
     @GetMapping("/v1/connect")
-    @Scheduled(cron = "*/10 * * * * *")
+    //@Scheduled(cron = "*/10 * * * * *")
     public void connect(){
         LocalDateTime dt = LocalDateTime.now();
         System.out.println(dt);
