@@ -2,6 +2,8 @@ package cz.kct.data.dto;
 
 import lombok.*;
 
+import java.io.Serializable;
+
 @Setter
 @Getter
 @ToString
@@ -9,7 +11,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder(toBuilder = true)
 
-public class ExcelDto {
+public class ExcelDto implements Serializable {
     private int id;
     private int value;
 }
