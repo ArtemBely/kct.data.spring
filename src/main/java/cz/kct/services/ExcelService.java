@@ -4,27 +4,13 @@ package cz.kct.services;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import java.io.File;
-
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 import java.io.FileOutputStream;
 
-import java.util.Map;
-
-import java.util.Set;
-
-import java.util.TreeMap;
-
-
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 @Slf4j
@@ -66,25 +52,21 @@ public class ExcelService {
         log.info("testApp.xlsx written successfully");
     }
 
-    public void readFromFile() throws IOException {
+    public void readFromFile() {
         ExcelService rc = new ExcelService();
-        String vOutput=rc.ReadFromExcel(2, 2);
+        String vOutput=rc.ReadFromExcel(1, 1);
         System.out.println(vOutput);
     }
-    public String ReadFromExcel(int vRow, int vColumn) throws IOException {
+    public String ReadFromExcel(int vRow, int vColumn) {
         String value=null;
         Workbook wb=null;
         try {
             FileInputStream fis=new FileInputStream(filePath);
             wb=new XSSFWorkbook(fis);
-        }
-        catch(FileNotFoundException e) {
+        } catch(IOException e) {
             e.printStackTrace();
         }
-        catch(IOException e1) {
-            e1.printStackTrace();
-        }
-        Sheet sheet=wb.getSheetAt(0);
+        Sheet sheet=wb.getSheet("Test table");
         Row row=sheet.getRow(vRow);
         Cell cell=row.getCell(vColumn);
         value=cell.getStringCellValue();
