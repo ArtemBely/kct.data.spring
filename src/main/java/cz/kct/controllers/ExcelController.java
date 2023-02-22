@@ -16,7 +16,7 @@ import java.io.IOException;
 
 public class ExcelController {
     private final ExcelService excelService;
-    @GetMapping("/v1/save")
+    @GetMapping("/v1/get")
     public void showData() throws IOException, ClassNotFoundException {
         excelService.readFromFile();
     }

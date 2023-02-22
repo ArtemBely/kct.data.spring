@@ -1,10 +1,26 @@
 package cz.kct.services;
 
-import cz.kct.data.dto.ExcelDto;
-import cz.kct.data.entity.ExcelEntity;
+
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import java.io.File;
+
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
+import java.io.FileOutputStream;
+
+import java.util.Map;
+
+import java.util.Set;
+
+import java.util.TreeMap;
+
 
 import java.io.*;
 import java.util.ArrayList;
@@ -15,42 +31,64 @@ import java.util.List;
 @AllArgsConstructor
 
 public class ExcelService {
-    private final String fileName = "C:\\Users\\artem.belyshev\\IdeaProjects\\kct.data.spring\\src\\main\\java\\cz\\kct\\testApp.csv";
-    List<ExcelEntity> lines = new ArrayList<>();
-    public void readFromFile() throws IOException, ClassNotFoundException {
-        ObjectInputStream objIn = null;
-        try {
-            FileInputStream fileIn = new FileInputStream(fileName);
-            if (fileIn == null) {
-                throw new IOException("Can't find file.");
-            }
-            objIn= new ObjectInputStream(fileIn);
-            while (true) {
-                ExcelEntity unit = (ExcelEntity) objIn.readObject();
-                lines.add(unit);
-                System.out.println(unit);
-            }
-        }
-        catch (EOFException e) {
-            try {
-                if (objIn != null) {
-                    objIn.close();
+
+    private final String filePath = "C:\\Users\\artem.belyshev\\IdeaProjects\\kct.data.spring\\src\\main\\java\\cz\\kct\\testApp.xlsx";
+    public void writeToFile() throws IOException {
+        File file = new File(filePath);
+        FileInputStream fis = new FileInputStream(file);
+        XSSFWorkbook wb = new XSSFWorkbook(fis);
+        XSSFSheet sheet = wb.createSheet("Test table");
+        Object[][] countryData = {
+                {"id", "value"},
+                {"1", "10"}
+        };
+        int rowCount = 0;
+        for (Object[] arrayData : countryData)
+        {
+            Row row = sheet.createRow(rowCount++);
+            int columnCount = 0;
+            for (Object obj : arrayData)
+            {
+                Cell cell = row.createCell(columnCount++);
+                if (obj instanceof String)
+                {
+                    cell.setCellValue((String)obj);
+                }
+                else if (obj instanceof Integer)
+                {
+                    cell.setCellValue((Integer)obj);
                 }
             }
-            catch (IOException closeException) {
-                System.out.println("printStackTrace");
-            }
         }
+        FileOutputStream fos = new FileOutputStream(filePath);
+        wb.write(fos);
+        fos.close();
+        log.info("testApp.xlsx written successfully");
     }
 
-    public void writeToFile() throws IOException {
-        FileOutputStream outputStream = new FileOutputStream(fileName);
-        try (ObjectOutputStream objOutStream = new ObjectOutputStream(outputStream)) {
-                ExcelDto dto = new ExcelDto(1, 5);
-                objOutStream.writeObject(dto);
-                System.out.println(dto);
-            }
-       // objOutStream.close();
+    public void readFromFile() throws IOException {
+        ExcelService rc = new ExcelService();
+        String vOutput=rc.ReadFromExcel(2, 2);
+        System.out.println(vOutput);
+    }
+    public String ReadFromExcel(int vRow, int vColumn) throws IOException {
+        String value=null;
+        Workbook wb=null;
+        try {
+            FileInputStream fis=new FileInputStream(filePath);
+            wb=new XSSFWorkbook(fis);
         }
-
+        catch(FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        catch(IOException e1) {
+            e1.printStackTrace();
+        }
+        Sheet sheet=wb.getSheetAt(0);
+        Row row=sheet.getRow(vRow);
+        Cell cell=row.getCell(vColumn);
+        value=cell.getStringCellValue();
+        return value;
+    }
 }
+

@@ -45,6 +45,9 @@ dependencies {
 
     testImplementation 'org.awaitility:awaitility:4.2.0'
 
+    //work with excel
+    implementation 'org.apache.poi:poi-ooxml:5.2.3'
+
 }
 
 test {
