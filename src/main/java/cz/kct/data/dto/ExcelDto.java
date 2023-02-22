@@ -13,5 +13,5 @@ import java.io.Serializable;
 
 public class ExcelDto implements Serializable {
     private int id;
-    private int value;
+    private String value;
 }

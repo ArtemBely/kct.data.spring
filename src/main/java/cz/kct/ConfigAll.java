@@ -3,6 +3,7 @@ package cz.kct;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import cz.kct.data.mapper.PersonMapper;
 import cz.kct.services.SalaryService;
+import cz.kct.utilities.ValueConvertUtility;
 import feign.jackson.JacksonEncoder;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.ComponentScan;
@@ -24,5 +25,8 @@ public class ConfigAll {
     public ModelMapper modelMapper() {
         return new ModelMapper();
     }
+
+    @Bean
+    public ValueConvertUtility valueConvertUtility() { return new ValueConvertUtility(); }
 
 }

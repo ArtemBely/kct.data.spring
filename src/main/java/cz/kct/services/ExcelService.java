@@ -1,6 +1,7 @@
 package cz.kct.services;
-
-
+import cz.kct.data.entity.ExcelEntity;
+import cz.kct.repository.ExcelRepository;
+import cz.kct.utilities.ValueConvertUtility;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import java.io.File;
@@ -17,16 +18,18 @@ import java.io.*;
 @AllArgsConstructor
 
 public class ExcelService {
-
     private final String filePath = "C:\\Users\\artem.belyshev\\IdeaProjects\\kct.data.spring\\src\\main\\java\\cz\\kct\\testApp.xlsx";
+    private final ExcelRepository excelRepository;
+    private ValueConvertUtility valueConvertUtility;
+
     public void writeToFile() throws IOException {
         File file = new File(filePath);
         FileInputStream fis = new FileInputStream(file);
         XSSFWorkbook wb = new XSSFWorkbook(fis);
-        XSSFSheet sheet = wb.createSheet("Test table");
+        XSSFSheet sheet = wb.createSheet("Values");
         Object[][] countryData = {
                 {"id", "value"},
-                {"1", "10"}
+                {"1", "16"}
         };
         int rowCount = 0;
         for (Object[] arrayData : countryData)
@@ -52,13 +55,13 @@ public class ExcelService {
         log.info("testApp.xlsx written successfully");
     }
 
-    public void readFromFile() {
-        ExcelService rc = new ExcelService();
-        String vOutput=rc.ReadFromExcel(1, 1);
-        System.out.println(vOutput);
+    public String readFromFile() {
+        String vOutput=this.ReadFromExcel(1, 1);
+        log.info(vOutput);
+        return vOutput;
     }
     public String ReadFromExcel(int vRow, int vColumn) {
-        String value=null;
+        String value;
         Workbook wb=null;
         try {
             FileInputStream fis=new FileInputStream(filePath);
@@ -66,11 +69,17 @@ public class ExcelService {
         } catch(IOException e) {
             e.printStackTrace();
         }
-        Sheet sheet=wb.getSheet("Test table");
+        Sheet sheet=wb.getSheet("Values");
         Row row=sheet.getRow(vRow);
         Cell cell=row.getCell(vColumn);
         value=cell.getStringCellValue();
         return value;
+    }
+
+    public void insert() {
+        log.info("start process insert value in services");
+        excelRepository.save(new ExcelEntity(valueConvertUtility.getHexString(this.readFromFile())));
+        log.info("end process insert value in services");
     }
 }
 

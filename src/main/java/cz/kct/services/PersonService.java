@@ -15,13 +15,10 @@ import java.util.Optional;
 @Service
 @Slf4j
 @AllArgsConstructor
-//@NoArgsConstructor
 
 public class PersonService {
     private PersonMapper personMapper;
     private final PersonRepository personRepository;
-    //private final PersonRepositoryToDto personRepository2;
-
     public void insert(PersonDto dto) {
         log.info("start process insert person in services");
         PersonEntity personEntity = personMapper.mapToEntity(dto);
