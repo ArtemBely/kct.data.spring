@@ -16,12 +16,8 @@ public class ExcelController {
     public void showData() {
         excelService.readFromFile();
     }
-
     @GetMapping("/v1/insert")
-    public void saveData() throws IOException {
-        excelService.writeToFile();
-    }
-
+    public void saveData() throws IOException { excelService.writeToFile(); }
     @GetMapping("/v1/save")
     public void saveValue() {
         log.info("start process insert value in controller");
