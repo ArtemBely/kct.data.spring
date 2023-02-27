@@ -1,9 +1,7 @@
 package cz.kct;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import cz.kct.data.mapper.PersonMapper;
-import cz.kct.services.SalaryService;
-import cz.kct.services.streams.ReadFromExcel;
+import cz.kct.services.streams.ExcelUtility;
 import cz.kct.services.streams.WriteToFile;
 import cz.kct.utilities.ValueConvertUtility;
 import feign.jackson.JacksonEncoder;
@@ -27,12 +25,6 @@ public class ConfigAll {
     public ModelMapper modelMapper() {
         return new ModelMapper();
     }
-
-    @Bean
-    public ValueConvertUtility valueConvertUtility() { return new ValueConvertUtility(); }
-
-    @Bean
-    public ReadFromExcel readFromExcel() { return new ReadFromExcel(); }
 
     @Bean
     public WriteToFile writeToFile() { return new WriteToFile(); }

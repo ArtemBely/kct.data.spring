@@ -1,4 +1,5 @@
 package cz.kct.controllers;
+import cz.kct.exceptions.ExcelException;
 import cz.kct.services.ExcelService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -13,7 +14,7 @@ import java.io.IOException;
 public class ExcelController {
     private final ExcelService excelService;
     @GetMapping("/v1/get")
-    public void showData() {
+    public void showData() throws ExcelException {
         excelService.readFromFile();
     }
     @GetMapping("/v1/insert")
