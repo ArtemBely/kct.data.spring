@@ -24,8 +24,15 @@ public class ExcelService {
     private final ExcelRepository excelRepository;
     private WriteToFile writeToFile;
 
-    public void writeToFile() throws IOException {
-        writeToFile.writeToFile(FILE_PATH, tableName);
+    public void writeToFile() {
+        try {
+            log.info("start process of writing data into excel");
+            writeToFile.writeToFile(FILE_PATH, tableName);
+            log.info("end process of writing data into excel");
+        }
+        catch (Exception e) {
+            log.error(e.toString());
+        }
     }
 
     public String readFromFile() throws ExcelException {

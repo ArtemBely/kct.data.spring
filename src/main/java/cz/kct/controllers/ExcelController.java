@@ -15,10 +15,16 @@ public class ExcelController {
     private final ExcelService excelService;
     @GetMapping("/v1/get")
     public void showData() throws ExcelException {
+        log.info("start process of getting data from excel");
         excelService.readFromFile();
+        log.info("data from excel was received");
     }
     @GetMapping("/v1/insert")
-    public void saveData() throws IOException { excelService.writeToFile(); }
+    public void saveData() {
+        log.info("start process of creation table and writing into excel");
+        excelService.writeToFile();
+        log.info("end process of creation table and writing into excel");
+    }
     @GetMapping("/v1/save")
     public void saveValue() {
         log.info("start process insert value in controller");

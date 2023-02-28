@@ -1,72 +1,39 @@
-2023-02-24 09:51:51,784 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
-2023-02-24 09:51:51,810 INFO cz.kct.Tutorial [main] Starting Tutorial using Java 15.0.10 on nb0208 with PID 8152 (C:\Users\artem.belyshev\IdeaProjects\kct.data.spring\out\production\classes started by artem.belyshev in C:\Users\artem.belyshev\IdeaProjects\kct.data.spring)
-2023-02-24 09:51:51,810 INFO cz.kct.Tutorial [main] No active profile set, falling back to default profiles: default
-2023-02-24 09:51:52,391 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-02-24 09:51:52,441 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 42 ms. Found 3 JPA repository interfaces.
-2023-02-24 09:51:53,080 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2023-02-24 09:51:53,089 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2023-02-24 09:51:53,089 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2023-02-24 09:51:53,089 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
-2023-02-24 09:51:53,177 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2023-02-24 09:51:53,177 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1332 ms
-2023-02-24 09:51:53,318 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-02-24 09:51:53,399 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
-2023-02-24 09:51:53,562 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-02-24 09:51:53,668 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-02-24 09:51:53,801 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-02-24 09:51:53,826 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2023-02-24 09:51:54,602 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-02-24 09:51:54,613 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-02-24 09:51:55,151 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-02-24 09:51:55,249 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
-2023-02-24 09:51:56,067 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService 'taskScheduler'
-2023-02-24 09:51:56,085 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2023-02-24 09:51:56,111 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2023-02-24 09:51:56,125 INFO cz.kct.Tutorial [main] Started Tutorial in 4.736 seconds (JVM running for 5.812)
-2023-02-24 09:52:28,743 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-02-24 09:52:28,744 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-02-24 09:52:28,745 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
-2023-02-24 09:52:29,268 INFO cz.kct.services.ExcelService [http-nio-8080-exec-1] Data from file: 16
-2023-02-24 09:52:40,618 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [SpringContextShutdownHook] Shutting down ExecutorService 'taskScheduler'
-2023-02-24 09:52:40,619 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2023-02-24 09:52:40,620 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-02-24 09:52:40,622 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-02-24 09:52:40,627 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
-2023-02-24 09:54:57,508 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
-2023-02-24 09:54:57,547 INFO cz.kct.Tutorial [main] Starting Tutorial using Java 15.0.10 on nb0208 with PID 14300 (C:\Users\artem.belyshev\IdeaProjects\kct.data.spring\out\production\classes started by artem.belyshev in C:\Users\artem.belyshev\IdeaProjects\kct.data.spring)
-2023-02-24 09:54:57,548 INFO cz.kct.Tutorial [main] No active profile set, falling back to default profiles: default
-2023-02-24 09:54:58,070 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-02-24 09:54:58,121 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 43 ms. Found 3 JPA repository interfaces.
-2023-02-24 09:54:58,735 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
-2023-02-24 09:54:58,742 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
-2023-02-24 09:54:58,743 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
-2023-02-24 09:54:58,743 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
-2023-02-24 09:54:58,823 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
-2023-02-24 09:54:58,823 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1230 ms
-2023-02-24 09:54:58,954 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-02-24 09:54:59,026 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
-2023-02-24 09:54:59,157 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-02-24 09:54:59,259 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
-2023-02-24 09:54:59,459 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
-2023-02-24 09:54:59,474 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
-2023-02-24 09:55:00,119 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-02-24 09:55:00,127 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-02-24 09:55:00,649 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-02-24 09:55:00,723 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
-2023-02-24 09:55:01,569 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService 'taskScheduler'
-2023-02-24 09:55:01,592 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
-2023-02-24 09:55:01,615 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
-2023-02-24 09:55:01,626 INFO cz.kct.Tutorial [main] Started Tutorial in 4.64 seconds (JVM running for 5.568)
-2023-02-24 09:56:36,883 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-02-24 09:56:36,884 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
-2023-02-24 09:56:36,885 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
-2023-02-24 09:56:36,903 INFO cz.kct.controllers.ExcelController [http-nio-8080-exec-1] start process insert value in controller
-2023-02-24 09:56:36,903 INFO cz.kct.services.ExcelService [http-nio-8080-exec-1] start process insert value in services
-2023-02-24 09:56:37,341 INFO cz.kct.services.ExcelService [http-nio-8080-exec-1] Data from file: 16
-2023-02-24 09:56:37,425 INFO cz.kct.services.ExcelService [http-nio-8080-exec-1] end process insert value in services
-2023-02-24 09:56:37,425 INFO cz.kct.controllers.ExcelController [http-nio-8080-exec-1] end process insert value in controller
-2023-02-24 09:57:42,948 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [SpringContextShutdownHook] Shutting down ExecutorService 'taskScheduler'
-2023-02-24 09:57:42,949 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
-2023-02-24 09:57:42,950 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-02-24 09:57:42,952 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
-2023-02-24 09:57:42,957 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.
+2023-02-28 09:54:05,207 INFO org.hibernate.validator.internal.util.Version [background-preinit] HV000001: Hibernate Validator 6.1.7.Final
+2023-02-28 09:54:05,243 INFO cz.kct.Tutorial [main] Starting Tutorial using Java 19.0.2 on nb0208 with PID 8628 (C:\Users\artem.belyshev\IdeaProjects\kct.data.spring\out\production\classes started by artem.belyshev in C:\Users\artem.belyshev\IdeaProjects\kct.data.spring)
+2023-02-28 09:54:05,244 INFO cz.kct.Tutorial [main] No active profile set, falling back to default profiles: default
+2023-02-28 09:54:05,864 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-28 09:54:05,923 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 47 ms. Found 3 JPA repository interfaces.
+2023-02-28 09:54:06,645 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-02-28 09:54:06,657 INFO org.apache.coyote.http11.Http11NioProtocol [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-28 09:54:06,657 INFO org.apache.catalina.core.StandardService [main] Starting service [Tomcat]
+2023-02-28 09:54:06,658 INFO org.apache.catalina.core.StandardEngine [main] Starting Servlet engine: [Apache Tomcat/9.0.45]
+2023-02-28 09:54:06,753 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [main] Initializing Spring embedded WebApplicationContext
+2023-02-28 09:54:06,753 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1461 ms
+2023-02-28 09:54:06,965 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-28 09:54:07,049 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.4.30.Final
+2023-02-28 09:54:07,277 INFO org.hibernate.annotations.common.Version [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-28 09:54:07,400 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Starting...
+2023-02-28 09:54:07,571 INFO com.zaxxer.hikari.HikariDataSource [main] HikariPool-1 - Start completed.
+2023-02-28 09:54:07,592 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL95Dialect
+2023-02-28 09:54:08,487 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-28 09:54:08,499 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-28 09:54:09,503 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-28 09:54:09,745 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [main] Initializing ExecutorService 'applicationTaskExecutor'
+2023-02-28 09:54:11,289 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [main] Initializing ExecutorService 'taskScheduler'
+2023-02-28 09:54:11,339 INFO org.apache.coyote.http11.Http11NioProtocol [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-28 09:54:11,428 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-28 09:54:11,458 INFO cz.kct.Tutorial [main] Started Tutorial in 6.735 seconds (JVM running for 8.035)
+2023-02-28 09:54:16,607 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] [http-nio-8080-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-28 09:54:16,607 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-2] Initializing Servlet 'dispatcherServlet'
+2023-02-28 09:54:16,608 INFO org.springframework.web.servlet.DispatcherServlet [http-nio-8080-exec-2] Completed initialization in 1 ms
+2023-02-28 09:54:16,634 INFO cz.kct.controllers.ExcelController [http-nio-8080-exec-2] start process insert value in controller
+2023-02-28 09:54:16,635 INFO cz.kct.services.ExcelService [http-nio-8080-exec-2] start process insert value in services
+2023-02-28 09:54:17,232 INFO cz.kct.services.ExcelService [http-nio-8080-exec-2] Data from file: 16
+2023-02-28 09:54:17,289 INFO cz.kct.services.ExcelService [http-nio-8080-exec-2] end process insert value in services
+2023-02-28 09:54:17,289 INFO cz.kct.controllers.ExcelController [http-nio-8080-exec-2] end process insert value in controller
+2023-02-28 09:55:07,557 INFO cz.kct.services.ExcelService [http-nio-8080-exec-3] Data from file: 16
+2023-02-28 10:02:08,942 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler [SpringContextShutdownHook] Shutting down ExecutorService 'taskScheduler'
+2023-02-28 10:02:08,943 INFO org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor [SpringContextShutdownHook] Shutting down ExecutorService 'applicationTaskExecutor'
+2023-02-28 10:02:08,945 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean [SpringContextShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-28 10:02:08,946 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown initiated...
+2023-02-28 10:02:08,951 INFO com.zaxxer.hikari.HikariDataSource [SpringContextShutdownHook] HikariPool-1 - Shutdown completed.

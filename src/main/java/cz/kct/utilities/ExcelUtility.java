@@ -1,6 +1,5 @@
 package cz.kct.utilities;
 
-import cz.kct.data.entity.PersonEntity;
 import cz.kct.exceptions.ExcelException;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
