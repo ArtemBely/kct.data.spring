@@ -1,5 +1,6 @@
-package cz.kct.services.streams;
+package cz.kct.utilities;
 
+import cz.kct.data.entity.PersonEntity;
 import cz.kct.exceptions.ExcelException;
 import lombok.experimental.UtilityClass;
 import lombok.extern.slf4j.Slf4j;
@@ -8,11 +9,10 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.logging.Logger;
+import java.util.Optional;
+
 @Slf4j
 @UtilityClass
 
@@ -21,7 +21,9 @@ public class ExcelUtility {
     public Workbook getWorkBook(String filePath) throws ExcelException {
         try {
             FileInputStream fis = new FileInputStream(filePath);
-            return new XSSFWorkbook(fis); // +Optional
+            //Optional<XSSFWorkbook> wb = Optional.of(new XSSFWorkbook(fis));
+            //return wb.get();
+            return new XSSFWorkbook(fis);
         } catch(IOException e) {
             log.error(e.toString());
             throw new ExcelException(e.getMessage());

@@ -2,7 +2,7 @@ package cz.kct.services;
 import cz.kct.data.entity.ExcelEntity;
 import cz.kct.exceptions.ExcelException;
 import cz.kct.repository.ExcelRepository;
-import cz.kct.services.streams.ExcelUtility;
+import cz.kct.utilities.ExcelUtility;
 import cz.kct.services.streams.WriteToFile;
 import cz.kct.utilities.ValueConvertUtility;
 import lombok.AllArgsConstructor;

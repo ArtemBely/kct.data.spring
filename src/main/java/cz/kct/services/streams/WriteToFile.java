@@ -11,14 +11,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class WriteToFile {
+    public static final String ID = "id";
+    public static final String VALUE = "value";
+    public static final String FIRST_VALUE = "1";
+    public static final String SECOND_VALUE = "72";
     public void writeToFile(String filePath, String tableName) throws IOException {
         File file = new File(filePath);
         FileInputStream fis = new FileInputStream(file);
         XSSFWorkbook wb = new XSSFWorkbook(fis);
         XSSFSheet sheet = wb.createSheet(tableName);
         Object[][] countryData = {
-                {"id", "value"},
-                {"1", "72"}
+                {ID, VALUE},
+                {FIRST_VALUE, SECOND_VALUE}
         };
         int rowCount = 0;
         for (Object[] arrayData : countryData)
