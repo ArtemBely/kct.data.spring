@@ -8,9 +8,11 @@ import cz.kct.utilities.ValueConvertUtility;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -36,10 +38,13 @@ public class ExcelService {
     }
 
     public String readFromFile() throws ExcelException {
-        Workbook vOutput = ExcelUtility.getWorkBook(FILE_PATH);
-        String vOutputString = ExcelUtility.getValue(ROW, COLUMN, vOutput, tableName);
-        log.info("Data from file: {}", vOutputString);
-        return vOutputString;
+        Optional<XSSFWorkbook> vOutput = ExcelUtility.getWorkBook(FILE_PATH);
+        if(vOutput.isPresent()) {
+            return ExcelUtility.getValue(ROW, COLUMN, vOutput.get(), tableName);
+        }
+        else {
+            throw new ExcelException("File path is not valid");
+        }
     }
 
     public void insert() {
