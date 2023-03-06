@@ -31,6 +31,7 @@ public class ExcelUtility {
         Sheet sheet = wb.getSheet(tableName);
         Row row = sheet.getRow(vRow);
         Cell cell = row.getCell(vColumn);
+        log.info("Data is: {}:", cell.getStringCellValue());
         return cell.getStringCellValue();
     }
 }

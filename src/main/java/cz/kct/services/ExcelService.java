@@ -21,7 +21,7 @@ import java.util.Optional;
 public class ExcelService {
     public static final int ROW = 1;
     public static final int COLUMN = 1;
-    public static final String FILE_PATH = "C:\\Users\\artem.belyshev\\IdeaProjects\\kct.data.spring\\src\\main\\java\\cz\\kct\\testApp.xlsx";
+    public static final String FILE_PATH = "C:\\Users\\belysheva\\Desktop\\gradle\\src\\main\\java\\cz\\kct\\testApp.xlsx";
     private final String tableName = "Values";
     private final ExcelRepository excelRepository;
     private WriteToFile writeToFile;
