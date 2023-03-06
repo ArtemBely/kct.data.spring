@@ -17,14 +17,14 @@ import java.util.Optional;
 
 public class ExcelUtility {
 
-    public Optional<XSSFWorkbook> getWorkBook(String filePath) throws ExcelException {
+    public Optional<XSSFWorkbook> getWorkBook(String filePath) {
         try {
             FileInputStream fis = new FileInputStream(filePath);
             Optional<XSSFWorkbook> wb = Optional.of(new XSSFWorkbook(fis));
             return wb;
         } catch(IOException e) {
-            log.error(e.toString());
-            throw new ExcelException(e.getMessage());
+            log.error("Wrong file name. {}", e.getMessage());
+            return Optional.ofNullable(null);
         }
     }
     public String getValue(int vRow, int vColumn, Workbook wb, String tableName) {
