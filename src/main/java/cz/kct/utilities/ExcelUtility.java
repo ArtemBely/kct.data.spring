@@ -17,7 +17,7 @@ import java.util.Optional;
 
 public class ExcelUtility {
 
-    public Optional<XSSFWorkbook> getWorkBook(String filePath) {
+    public Optional<XSSFWorkbook>getWorkBook(String filePath) {
         try {
             FileInputStream fis = new FileInputStream(filePath);
             Optional<XSSFWorkbook> wb = Optional.of(new XSSFWorkbook(fis));
